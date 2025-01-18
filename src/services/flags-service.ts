@@ -9,7 +9,6 @@ export const fetchAllCountries = async () : Promise<CountryInfoList> => {
 
     try {
         const r = await axios.get(`${baseUrl}/all`);
-        console.log('DATA: ',r)
         const res = CountriesInfoSchema.safeParse(r.data);
         if(!res.success)
             throw new Error("Invalid json parse..");
@@ -25,7 +24,6 @@ export const fetchCountryByName = async ( name: string) : Promise<CountryInfo> =
 
     try {
         const {data} = await axios.get(`${baseUrl}/name/${name}`);
-        console.log('DATA: ', data)
         const res = CountriesInfoSchema.safeParse(data);
         if(!res.success)
             throw new Error("Invalid json parse..");
@@ -37,18 +35,18 @@ export const fetchCountryByName = async ( name: string) : Promise<CountryInfo> =
     }
 }
 
-export const fetchCountriesByRegion = async ( region :string ) : Promise<CountryInfoList> => {
+// export const fetchCountriesByRegion = async ( region :string ) : Promise<CountryInfoList> => {
 
-    try {
-        const { data } = await axios.get(`${baseUrl}/region/${region}`);
-        console.log('DATA: ',data)
-        const res = CountriesInfoSchema.safeParse(data);
-        if(!res.success)
-            throw new Error("Invalid json parse..");
+//     try {
+//         const { data } = await axios.get(`${baseUrl}/region/${region}`);
+//         console.log('DATA: ',data)
+//         const res = CountriesInfoSchema.safeParse(data);
+//         if(!res.success)
+//             throw new Error("Invalid json parse..");
 
-        return res.data;
-    } catch (error) {
-        console.log("Can't get region countries - Error: "+error);
-        throw error;
-    }
-}
+//         return res.data;
+//     } catch (error) {
+//         console.log("Can't get region countries - Error: "+error);
+//         throw error;
+//     }
+// }

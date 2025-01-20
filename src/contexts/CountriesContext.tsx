@@ -1,6 +1,6 @@
 
 import { createContext, ReactNode } from "react"
-import { CountryInfoList, Theme } from "../types";
+import { CountryInfoList } from "../types";
 import { useGlobalCountriesState } from "../hooks/useGlobalCountriesState";
 
 type CountriesContextType = {

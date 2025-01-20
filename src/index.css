@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+    :root {
+      --dark-blue-dark: hsl(209, 23%, 22%);
+      --very-dark-blue-dark: hsl(207, 26%, 17%);
+
+      --very-dark-blue-light: hsl(200, 15%, 8%);
+      --dark-gray-light: hsl(0, 0%, 52%);
+      --very-dark-gray-light: hsl(0, 0%, 98%);
+    }
+  }

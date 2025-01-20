@@ -3,3 +3,8 @@ import { CountryInfoSchema, CountriesInfoSchema } from '../schemas/restcountries
 
 export type CountryInfo = z.infer<typeof CountryInfoSchema>;
 export type CountryInfoList = z.infer<typeof CountriesInfoSchema>;
+
+export enum Theme {
+    DARK,
+    LIGHT
+}

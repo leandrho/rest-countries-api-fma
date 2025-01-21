@@ -1,9 +1,14 @@
+import { CountriesHeader } from './components/CountriesHeader';
+import { CountriesMain } from './components/CountriesMain';
 
 function App() {
 
   return (
     <>
-      <h1>APP</h1>
+      <div className='flex flex-col h-screen w-full'>
+        <CountriesHeader />
+        <CountriesMain />
+      </div>
     </>
   )
 }

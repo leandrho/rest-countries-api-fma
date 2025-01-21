@@ -17,7 +17,12 @@ export const CountryInfoSchema = z.object({
     languages: languagesSchema.optional(),
     capital: z.array(z.string()).optional(),
     currencies: currenciesSchema.optional(),
-    borders: z.array(z.string()).optional()
+    borders: z.array(z.string()).optional(),
+    flags: z.object({
+        png: z.string().optional(),
+        svg: z.string(),
+        alt: z.string().optional()
+    })
 })
 
 export const CountriesInfoSchema = z.array(CountryInfoSchema);

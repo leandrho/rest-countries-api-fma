@@ -1,12 +1,17 @@
 
 import { createContext, ReactNode } from "react"
-import { CountryInfoList } from "../types";
+import { CountryInfo, CountryInfoList } from "../types";
 import { useGlobalCountriesState } from "../hooks/useGlobalCountriesState";
 
 type CountriesContextType = {
     countries: CountryInfoList,
     errorMsg :string,
-    toogleTheme :() => void
+    toogleTheme :() => void,
+    showCountry :CountryInfo | null,
+    setShowCountry :( country :CountryInfo | null ) => void,
+    getCountry : (cca3:string) => CountryInfo | null,
+    reloadCountries :()=>void,
+    loading :boolean
 }
 export const CountriesContext = createContext({} as CountriesContextType);
 

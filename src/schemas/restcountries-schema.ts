@@ -22,7 +22,8 @@ export const CountryInfoSchema = z.object({
         png: z.string().optional(),
         svg: z.string(),
         alt: z.string().optional()
-    })
+    }),
+    cca3: z.string()
 })
 
 export const CountriesInfoSchema = z.array(CountryInfoSchema);

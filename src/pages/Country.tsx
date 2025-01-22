@@ -16,6 +16,20 @@ export const Country = () => {
         if(country)
             setShowCountry(country);
     }
+    const getCurrencies = ():string => {
+        let currs :string[] = [];
+        for (const key in showCountry?.currencies) 
+            currs.push(showCountry.currencies[key].name);
+        
+        return currs.length?currs.join(', '):'';
+    }
+    const getLangs = ():string => {
+        let langs :string[] = [];
+        for (const key in showCountry?.languages) 
+            langs.push(showCountry.languages[key]);
+        
+        return langs.length?langs.join(', '):'';
+    }
     return (
         <section className="flex-grow px-6 py-16 flex justify-center xl:mx-16 bg-veryDarkGrayLight dark:bg-veryDarkBlueDark ">
             <div className="flex flex-col gap-16 w-full max-w-[460px] xl:max-w-full">
@@ -25,11 +39,11 @@ export const Country = () => {
                     Back
                 </button>
                 <div className="flex flex-col gap-12 xl:flex-row xl:items-center xl:justify-between" >
-                    <figure className="h-[330px] w-full xl:min-w-[560px] xl:w-[45%] xl:h-[400px]">
+                    <figure className="h-[240px] sm:h-[330px] w-full xl:min-w-[560px] xl:w-[45%] xl:h-[400px]">
                         <img src={showCountry?.flags.png} alt={showCountry?.name.common + 'flag'} className="h-full w-full object-fill bg-white" />
                     </figure>
                     <div className="flex flex-col gap-8 xl:w-[45%]">
-                        <h2 className="text-[26px] font-extrabold text-veryDarkBlueLight dark:text-white">{showCountry?.name.common}</h2>
+                        <h2 className="text-xl sm:text-[26px] font-extrabold text-veryDarkBlueLight dark:text-white">{showCountry?.name.common}</h2>
                         <div className="flex flex-col gap-10 xl:flex-row xl:gap-[20%]">
                             <div className="space-y-2">
                                 <p className="text-base font-medium text-veryDarkBlueLight dark:text-white">Native Name: <span className="font-light">{showCountry?.name.common}</span></p>
@@ -40,8 +54,8 @@ export const Country = () => {
                             </div>
                             <div className="space-y-4">
                                 <p className="text-base font-medium text-veryDarkBlueLight dark:text-white">Top Level Domain: <span className="font-light">{showCountry?.tld}</span></p>
-                                <p className="text-base font-medium text-veryDarkBlueLight dark:text-white">Currencies: <span className="font-light">{`US$`}</span></p>
-                                <p className="text-base font-medium text-veryDarkBlueLight dark:text-white">Languages: <span className="font-light">{`LANGS`}</span></p>
+                                <p className="text-base font-medium text-veryDarkBlueLight dark:text-white">Currencies: <span className="font-light">{getCurrencies()}</span></p>
+                                <p className="text-base font-medium text-veryDarkBlueLight dark:text-white">Languages: <span className="font-light">{getLangs()}</span></p>
                             </div>
                         </div>
                         <div className="flex flex-col gap-4 xl:flex-row xl:items-baseline">

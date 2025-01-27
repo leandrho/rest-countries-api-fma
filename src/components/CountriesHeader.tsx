@@ -4,7 +4,7 @@ export const CountriesHeader = () => {
     const {toogleTheme} = useCountries();
   return (
     <header className="flex justify-between px-6 py-10 shadow-md bg-white dark:bg-darkBlueDark z-10">
-        <h1 className="text-lg sm:text-xl font-bold text-veryDarkBlueLight dark:text-white">Where in the world?</h1>
+        <h1 className="text-lg sm:text-xl font-extrabold text-veryDarkBlueLight dark:text-white">Where in the world?</h1>
         <button className="flex items-center gap-2 sm:gap-4 "
                 onClick={()=>toogleTheme()}
         >
